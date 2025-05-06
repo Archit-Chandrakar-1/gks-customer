@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "target": "es5",
+    "module": "commonjs",
+    "jsx": "react"
+  }
+}

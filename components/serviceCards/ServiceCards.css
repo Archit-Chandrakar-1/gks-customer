@@ -1,0 +1,139 @@
+.service-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  height: 250px;
+}
+
+.card-content {
+  display: flex;
+  height: 100%;
+}
+
+.card-left {
+  flex: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--light-gray);
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--dark-gray);
+}
+
+.card-reviews {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.stars {
+  display: flex;
+  margin-right: 5px;
+}
+
+.star-filled {
+  color: #FFD700;
+}
+
+.star-empty {
+  color: var(--medium-gray);
+}
+
+.review-count {
+  font-size: 12px;
+  color: var(--dark-gray);
+}
+
+.card-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.view-details-btn {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.view-details-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.card-image {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.add-btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 8px 25px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #7e0404;
+}
+
+@media (max-width: 768px) {
+  .card {
+    height: auto;
+  }
+  
+  .card-content {
+    flex-direction: column-reverse;
+  }
+  
+  .card-right {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  
+  .card-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0;
+  }
+  
+  .card-left {
+    padding: 15px;
+  }
+}
