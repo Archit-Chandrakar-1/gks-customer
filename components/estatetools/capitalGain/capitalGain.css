@@ -51,6 +51,7 @@ label {
 
 .currency-symbol {
   position: absolute;
+  margin-right: 15px;
   left: 1rem;
   top: 50%;
   transform: translateY(-50%);
@@ -58,6 +59,7 @@ label {
 }
 
 .value-input {
+  margin-left: 10px;
   width: 100%;
   padding: 0.75rem;
   padding-left: 2rem;

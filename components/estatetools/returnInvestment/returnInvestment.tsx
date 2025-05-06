@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 import './returnInvestment.css';
 
 const ReturnInvestment = () => {
@@ -13,6 +15,8 @@ const ReturnInvestment = () => {
     annualRoi: number;
     cagr: number;
   } | null>(null);
+
+  const resultRef = useRef<HTMLDivElement>(null);
 
   const calculateROI = () => {
     const invested = Number(amountInvested) || 0;
@@ -32,6 +36,51 @@ const ReturnInvestment = () => {
       annualRoi,
       cagr
     });
+  };
+
+  const handleRecalculate = () => {
+    setAmountInvested('');
+    setAmountReturned('');
+    setInvestmentPeriod(1);
+    setResults(null);
+  };
+
+  const handleShare = async () => {
+    if (!resultRef.current || !results) return;
+
+    const canvas = await html2canvas(resultRef.current);
+    const imgData = canvas.toDataURL('image/png');
+    
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: 'a4'
+    });
+
+    // Add title
+    pdf.setFontSize(20);
+    pdf.setTextColor(156, 5, 5);
+    pdf.text('Return on Investment (ROI) Calculator Results', 20, 20);
+
+    // Add calculation details
+    pdf.setFontSize(12);
+    pdf.setTextColor(0, 0, 0);
+    pdf.text(`Amount Invested: ₹${Number(amountInvested).toLocaleString('en-IN')}`, 20, 40);
+    pdf.text(`Amount Returned: ₹${Number(amountReturned).toLocaleString('en-IN')}`, 20, 50);
+    pdf.text(`Investment Period: ${investmentPeriod} years`, 20, 60);
+
+    // Add results
+    pdf.setFontSize(14);
+    pdf.text('Results:', 20, 80);
+    pdf.text(`Total Gain: ₹${results.totalGain.toLocaleString('en-IN')}`, 20, 90);
+    pdf.text(`ROI: ${results.roi.toFixed(2)}%`, 20, 100);
+    pdf.text(`Annual ROI: ${results.annualRoi.toFixed(2)}%`, 20, 110);
+    pdf.text(`CAGR: ${results.cagr.toFixed(2)}%`, 20, 120);
+
+    // Add the result section image
+    pdf.addImage(imgData, 'PNG', 20, 140, 170, 100);
+
+    pdf.save('roi-calculation.pdf');
   };
 
   const formatCurrency = (value: number) => {
@@ -100,7 +149,7 @@ const ReturnInvestment = () => {
         </div>
 
         {results && (
-          <div className="results-section">
+          <div ref={resultRef} className="results-section">
             <div className="result-item">
               <h3>Total Gain on Investment</h3>
               <div className="result-value">{formatCurrency(results.totalGain)}</div>
@@ -119,6 +168,21 @@ const ReturnInvestment = () => {
             <div className="result-item">
               <h3>Compound Annual Growth Rate (CAGR)</h3>
               <div className="result-value">{results.cagr.toFixed(2)}%</div>
+            </div>
+
+            <div className="button-group mt-6 flex justify-center gap-4">
+              <button 
+                onClick={handleRecalculate}
+                className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+              >
+                Recalculate
+              </button>
+              <button 
+                onClick={handleShare}
+                className="px-6 py-2 bg-[#9c0505] text-white rounded-lg hover:bg-[#7c0404] transition-colors"
+              >
+                Share as PDF
+              </button>
             </div>
           </div>
         )}

@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 import './stampDuty.css';
 
 const indianStates = [
@@ -49,6 +51,7 @@ const StampDutyCalculator = () => {
   const [selectedState, setSelectedState] = useState("Andhra Pradesh");
   const [propertyValue, setPropertyValue] = useState(MIN_VALUE);
   const [stampDuty, setStampDuty] = useState(null);
+  const resultRef = useRef(null);
 
   const formatCurrency = (value) => {
     return new Intl.NumberFormat('en-IN', {
@@ -67,6 +70,43 @@ const StampDutyCalculator = () => {
     const rate = stampDutyRates[selectedState];
     const calculatedDuty = (propertyValue * rate) / 100;
     setStampDuty(calculatedDuty);
+  };
+
+  const handleRecalculate = () => {
+    setSelectedState("Andhra Pradesh");
+    setPropertyValue(MIN_VALUE);
+    setStampDuty(null);
+  };
+
+  const handleShare = async () => {
+    if (!resultRef.current || stampDuty === null) return;
+
+    const canvas = await html2canvas(resultRef.current);
+    const imgData = canvas.toDataURL('image/png');
+    
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: 'a4'
+    });
+
+    // Add title
+    pdf.setFontSize(20);
+    pdf.setTextColor(156, 5, 5);
+    pdf.text('Stamp Duty Calculator Results', 20, 20);
+
+    // Add calculation details
+    pdf.setFontSize(12);
+    pdf.setTextColor(0, 0, 0);
+    pdf.text(`State: ${selectedState}`, 20, 40);
+    pdf.text(`Property Value: ${formatCurrency(propertyValue)}`, 20, 50);
+    pdf.text(`Stamp Duty Rate: ${stampDutyRates[selectedState]}%`, 20, 60);
+    pdf.text(`Stamp Duty Amount: ${formatCurrency(stampDuty)}`, 20, 70);
+
+    // Add the result section image
+    pdf.addImage(imgData, 'PNG', 20, 90, 170, 100);
+
+    pdf.save('stamp-duty-calculation.pdf');
   };
 
   const handleStateChange = (e) => {
@@ -137,12 +177,27 @@ const StampDutyCalculator = () => {
           </div>
 
           {stampDuty !== null && (
-            <div className="result-section">
+            <div ref={resultRef} className="result-section">
               <h2>Stamp Duty for Your Property</h2>
               <div className="result-amount">{formatCurrency(stampDuty)}</div>
               <p className="rate-info">
                 Stamp Duty rate for {selectedState}: {stampDutyRates[selectedState]}%
               </p>
+
+              <div className="button-group mt-6 flex justify-center gap-4">
+                <button 
+                  onClick={handleRecalculate}
+                  className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+                >
+                  Recalculate
+                </button>
+                <button 
+                  onClick={handleShare}
+                  className="px-6 py-2 bg-[#9c0505] text-white rounded-lg hover:bg-[#7c0404] transition-colors"
+                >
+                  Share as PDF
+                </button>
+              </div>
             </div>
           )}
         </div>
