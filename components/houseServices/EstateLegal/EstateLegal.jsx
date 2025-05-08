@@ -2,8 +2,10 @@
 "use client"; // Add this line to mark the component as a Client Component
 
 import React, { useState } from 'react';
-import ServiceCard from '../../serviceCard/ServiceCard';
 import BookingForm from '@/components/bookingForm/bookingForm';
+
+import ServiceCard from '../../serviceCard/ServiceCard';
+
 import { estateLegalServices } from '@/data/estateLegalServiceData';
 import './EstateLegal.css';
 import Header1 from '@/components/headers/Header1';

@@ -1,6 +1,5 @@
 "use client";
 import { useEffect } from "react";
-import "./globals.css";
 import "../public/scss/styles.scss";
 import "photoswipe/dist/photoswipe.css";
 import "react-modal-video/scss/modal-video.scss";
