@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { faqData } from '@/data/faqData';
-import './FAQpage.css';
+import './faqPage.css';
 import Header1 from '@/components/headers/Header1';
 
 
