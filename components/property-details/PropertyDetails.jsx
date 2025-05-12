@@ -58,9 +58,7 @@ export default function PropertyDetails() {
               <div className="single-property-element single-property-loan">
                 <LoanCalculator />
               </div>
-              <div className="single-property-element single-property-loan">
-                <LoanCalculator />
-              </div>
+             
               <div className="single-property-element single-property-nearby">
                 <Nearby />
               </div>

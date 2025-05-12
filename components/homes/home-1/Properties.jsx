@@ -1,7 +1,6 @@
 "use client";
 import { filterOptions, properties } from "@/data/properties";
-import EstateLegal from "@/components/houseServices/EstateLegal/EstateLegal";
-import EstateLegalPage from "@/app/houseServices/EstateLegal/page";
+
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -265,7 +264,7 @@ export default function Properties() {
 
                     
                     <SwiperSlide className="swiper-slide">
-                      <Link href="/houseServices/EstateLegal" className="homelengo-categories-v2">
+                      <Link href="/houseServices/estateLegal"  className="homelengo-categories-v2">
                         <div className="icon-box">
                           <svg
                             width={41}

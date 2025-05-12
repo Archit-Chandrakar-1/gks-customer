@@ -10,7 +10,7 @@ export const properties = [
     baths: 2,
     sqft: 1783,
     tags: ["Featured", "For Sale"],
-    avatar: "/images/avatar/avt-png1.png",
+    avatar: "/images/Indian-home/Indian-1.jpeg",
     agent: "NAME - ABC",
     lat: 40.7279707552121,
     long: -74.07152705896405,
@@ -44,7 +44,7 @@ export const properties = [
     baths: 3,
     tags: ["Featured", "For Sale"],
     sqft: 1666,
-    avatar: "/images/avatar/avt-png2.png",
+    avatar: "/images/Indian-home/Indian-1.jpeg",
     agent: "NAME - ABC",
     filterOptions: ["Apartment", "House", "Office"],
     features: [
@@ -70,7 +70,7 @@ export const properties = [
     rooms: 5,
     baths: 1,
     sqft: 1529,
-    avatar: "/images/avatar/avt-png3.png",
+    avatar: "/images/Indian-home/Indian-2.jpeg",
     agent: "NAME - ABC",
     filterOptions: ["Apartment", "Villa"],
     features: [
@@ -233,7 +233,7 @@ export const properties2 = [
     alt: "img",
     address: "666 AM, Civil Lines Raipur",
     title: "Gharkasathi - GKS",
-    avatar: "/images/avatar/avt-png2.png",
+    avatar: "/images/Indian-home/Indian-1.jpeg",
     agent: "NAME - ABC",
     features: [
       "Elevator",
@@ -262,7 +262,7 @@ export const properties2 = [
     alt: "img",
     address: "666 AM, Civil Lines Raipur",
     title: "Gharkasathi - GKS",
-    avatar: "/images/avatar/avt-png3.png",
+    avatar: "/images/Indian-home/Indian-2.jpeg",
     agent: "NAME - ABC",
     features: [
       "Air Condition",
@@ -456,7 +456,7 @@ export const properties3 = [
     type: ["Villa", "House"],
     price: 3089,
     agent: "NAME - ABC",
-    avatar: "/images/avatar/avt-png2.png",
+    avatar: "/images/Indian-home/Indian-1.jpeg",
     filterOptions: ["Studio", "House", "Office"],
     tags: ["Featured", "For Sale"],
   },
@@ -608,7 +608,7 @@ export const properties4 = [
     sqft: 1927,
     location: "666 AM, Civil Lines Raipur",
     agent: "NAME - ABC",
-    avatar: "/images/avatar/avt-png3.png",
+    avatar: "/images/Indian-home/Indian-2.jpeg",
     features: [
       "Air Condition",
       "Cable TV",
@@ -778,7 +778,7 @@ export const properties5 = [
     baths: 2,
     sqft: 1196,
     agent: "NAME - ABC",
-    avatar: "/images/avatar/avt-png2.png",
+    avatar: "/images/Indian-home/Indian-1.jpeg",
     features: [
       "Air Condition",
 
@@ -814,7 +814,7 @@ export const properties5 = [
     baths: 4,
     sqft: 1521,
     agent: "NAME - ABC",
-    avatar: "/images/avatar/avt-png3.png",
+    avatar: "/images/Indian-home/Indian-2.jpeg",
     features: [
       "Air Condition",
       "Cable TV",
@@ -987,7 +987,7 @@ export const properties6 = [
     baths: 1,
     sqft: 1746,
     agent: "NAME - ABC",
-    avatar: "/images/avatar/avt-png2.png",
+    avatar: "/images/Indian-home/Indian-1.jpeg",
     features: [
       "Air Condition",
       "Cable TV",
@@ -1158,7 +1158,7 @@ export const properties7 = [
     sqft: 1153,
     address: "666 AM, Civil Lines Raipur",
     agent: "Cameron Williamson",
-    avatar: "/images/avatar/avt-png2.png",
+    avatar: "/images/Indian-home/Indian-1.jpeg",
     features: [
       "Air Condition",
 
@@ -1193,7 +1193,7 @@ export const properties7 = [
     sqft: 1813,
     address: "666 AM, Civil Lines Raipur",
     agent: "Cameron Williamson",
-    avatar: "/images/avatar/avt-png2.png",
+    avatar: "/images/Indian-home/Indian-1.jpeg",
     features: [
       "Air Condition",
 

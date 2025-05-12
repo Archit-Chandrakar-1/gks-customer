@@ -19,7 +19,7 @@ export default function MyFavorite() {
                 <thead>
                   <tr>
                     <th>Listing</th>
-                    <th>Status</th>
+                    
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -54,50 +54,13 @@ export default function MyFavorite() {
                           </div>
                         </div>
                       </td>
-                      <td>
-                        <span>April 10, 2024</span>
-                      </td>
+                      
+                    
                       <td>
                         <ul className="list-action">
-                          <li>
-                            <a className="item">
-                              <svg
-                                width={16}
-                                height={16}
-                                viewBox="0 0 16 16"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M11.2413 2.9915L12.366 1.86616C12.6005 1.63171 12.9184 1.5 13.25 1.5C13.5816 1.5 13.8995 1.63171 14.134 1.86616C14.3685 2.10062 14.5002 2.4186 14.5002 2.75016C14.5002 3.08173 14.3685 3.39971 14.134 3.63416L4.55467 13.2135C4.20222 13.5657 3.76758 13.8246 3.29 13.9668L1.5 14.5002L2.03333 12.7102C2.17552 12.2326 2.43442 11.7979 2.78667 11.4455L11.242 2.9915H11.2413ZM11.2413 2.9915L13 4.75016"
-                                  stroke="#A3ABB0"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                              </svg>
-                              Edit
-                            </a>
-                          </li>
-                          <li>
-                            <a className="item">
-                              <svg
-                                width={16}
-                                height={16}
-                                viewBox="0 0 16 16"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M12.2427 12.2427C13.3679 11.1175 14.0001 9.59135 14.0001 8.00004C14.0001 6.40873 13.3679 4.8826 12.2427 3.75737C11.1175 2.63214 9.59135 2 8.00004 2C6.40873 2 4.8826 2.63214 3.75737 3.75737M12.2427 12.2427C11.1175 13.3679 9.59135 14.0001 8.00004 14.0001C6.40873 14.0001 4.8826 13.3679 3.75737 12.2427C2.63214 11.1175 2 9.59135 2 8.00004C2 6.40873 2.63214 4.8826 3.75737 3.75737M12.2427 12.2427L3.75737 3.75737"
-                                  stroke="#A3ABB0"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                              </svg>
-                              Sold
-                            </a>
-                          </li>
-                          <li>
+                         
+                          
+                          <li style={{ marginLeft: '300px' }}>
                             <a className="remove-file item">
                               <svg
                                 width={16}
@@ -113,7 +76,7 @@ export default function MyFavorite() {
                                   strokeLinejoin="round"
                                 />
                               </svg>
-                              Delete
+                              Remove
                             </a>
                           </li>
                         </ul>
