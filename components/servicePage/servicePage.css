@@ -16,6 +16,7 @@
 }
 
 .left-section {
+  margin-top: 80px;
   flex: 1;
   padding: 20px;
   overflow-y: auto;
@@ -23,6 +24,7 @@
 }
 
 .right-section {
+  margin-top: 90px;
   flex: 1;
   padding: 20px;
   position: sticky;
