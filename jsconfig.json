@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["*"]
     },
     "target": "es5",
     "module": "commonjs",
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "."
   }
 }

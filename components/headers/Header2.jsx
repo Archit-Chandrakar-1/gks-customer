@@ -144,7 +144,7 @@ export default function Header2() {
                 alt="nav-logo"
                 width={174}
                 height={44}
-                src="/images/logo/logo@2x.png"
+                src="/images/logo/gharkasathi-black.png"
               />
             </Link>
           </div>
