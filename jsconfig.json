@@ -1,11 +1,19 @@
+// {
+//   "compilerOptions": {
+//     "paths": {
+//       "@/*": ["./*"]
+//     },
+//     "target": "es5",
+//     "module": "commonjs",
+//     "jsx": "react",
+//     "baseUrl": "."
+//   }
+// }
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]
-    },
-    "target": "es5",
-    "module": "commonjs",
-    "jsx": "react",
-    "baseUrl": "."
+    }
   }
 }
