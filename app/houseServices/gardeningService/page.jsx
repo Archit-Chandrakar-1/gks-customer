@@ -1,7 +1,7 @@
 import React from 'react';
 import Header1 from '@/components/headers/Header1'; 
 import Footer1 from '@/components/footer/Footer1'; 
-import ServicePage from '@/components/servicePage/ServicePage';
+import ServicePage from '../../../components/servicePage/servicePage';
 import { gardeningData } from '@/data/gardeningData';
 import './gardeningService.css';
 
