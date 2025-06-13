@@ -1,24 +1,8 @@
 export const menuItems = [
-  // {
-  //   title: "Home",
-  //   links: [
-  //     { href: "/", label: "Homepage 01", isCurrent: true },
-  //     { href: "/home-02", label: "Homepage 02" },
-  //     { href: "/home-03", label: "Homepage 03" },
-  //     { href: "/home-04", label: "Homepage 04" },
-  //     { href: "/home-05", label: "Homepage 05" },
-  //     { href: "/home-06", label: "Homepage 06" },
-  //   ],
-  //   isCurrent: true,
-  // },
   {
     title: "Construction",
     href: "/houseServices/constructionService"
   },
-  // {
-  //   title: "Properties", 
-  //   href: "/property-details-v3"
-  // },
   {
     title: "Interior",
     href: "/houseServices/constructionService"
@@ -56,19 +40,60 @@ export const menuItems = [
   //   ],
   // },
   
+  // {
+  //   title: "Dashboard",
+  //   links: [
+  //     { href: "/dashboard", label: "Dashboard" },
+  //     { href: "/myOrder", label: "My Order" },
+  //     { href: "/message", label: "Message" },
+  //     { href: "/my-favorites", label: "My Favorites" },
+  //     { href: "/reviews", label: "Reviews" },
+  //     { href: "/my-profile", label: "My Profile" },
+  //     { href: "/add-property", label: "Add Property" },
+  //     { href: "/estatetools/stampDuty", label: "stampDuty" },
+  //   ],
+  // },
+
+  // {
+  //   title: "Dashboard",
+  //   links: [
+  //     { href: "/dashboard", label: "Dashboard" },
+  //     { href: "/myOrder", label: "My Order" },
+  //     { href: "/message", label: "Message" },
+  //     { href: "/my-favorites", label: "My Favorites" },
+  //     { href: "/reviews", label: "Reviews" },
+  //     { href: "/my-profile", label: "My Profile" },
+  //     { href: "/add-property", label: "Add Property" },
+  //     {
+  //       label: "Estate Tools",
+  //       subLinks: [
+  //         { href: "/estatetools/stampDuty",         label: "Stamp Duty" },
+  //         { href: "/estatetools/rentalYield",       label: "Rental Yield" },
+  //         { href: "/estatetools/capitalGain",       label: "Capital Gain" },
+  //         { href: "/estatetools/returnInvestment",  label: "Return Investment" },
+  //         { href: "/estatetools/returnInvestment",  label: "Rent Calculator" },
+  //         // Add more estate tool links here
+  //       ],
+  //     },
+  //   ],
+  // },
+
   {
     title: "Dashboard",
     links: [
       { href: "/dashboard", label: "Dashboard" },
+      {
+        label: "Estate Tools",
+        subLinks: [
+          { href: "/estatetools/stampDuty", label: "Stamp Duty" },
+          { href: "/estatetools/valuation", label: "Valuation Calculator" },
+        ],
+      },
       { href: "/myOrder", label: "My Order" },
       { href: "/message", label: "Message" },
-      { href: "/my-favorites", label: "My Favorites" },
-      { href: "/reviews", label: "Reviews" },
-      { href: "/my-profile", label: "My Profile" },
-      { href: "/add-property", label: "Add Property" },
-      { href: "/estatetools/stampDuty", label: "stampDuty" },
     ],
   },
+  
  
  
   {

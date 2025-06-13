@@ -78,13 +78,13 @@ export const services = [
       "Discover your perfect rental effortlessly. Explore a diverse variety of listings tailored precisely to suit your unique lifestyle needs.",
       link: "/houseServices/interiorService",
   },
-  {
-    imageSrc: "/Icons/Compass-2.jpg",
-    title: "Vastu Consultation",
-    description:
-      "Sell confidently with expert guidance and effective strategies, showcasing your property's best features for a successful sale.",
-      link: "/houseServices/vastuService",
-  },
+  // {
+  //   imageSrc: "/Icons/Compass-2.jpg",
+  //   title: "Vastu Consultation",
+  //   description:
+  //     "Sell confidently with expert guidance and effective strategies, showcasing your property's best features for a successful sale.",
+  //     link: "/houseServices/vastuService",
+  // },
   {
     imageSrc: "/Icons/trimming.png",
     title: "Gardening Services",
