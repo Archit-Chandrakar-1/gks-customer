@@ -46,14 +46,14 @@ export default function Header1({
                         width={166}
                         className="logo-1"
                         height={48}
-                        src="/images/logo/gharkasathi-black.png"
+                        src="/images/logo/logo-transparent-gks.png"
                       />
                       <Image
                         alt="logo"
                         width={166}
                         className="logo-2"
                         height={48}
-                        src="/images/logo/gharkasathi-black.png"
+                        src="/images/logo/logo@2x-white.png"
                       />
                     </Link>
                   </div>

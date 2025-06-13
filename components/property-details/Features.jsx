@@ -1,23 +1,20 @@
 const featureGroups = [
   [
-    "Wardrobes", 
-    "Modular Kitchen",
-    "ACs",
-    "Geysers",
+    "Power Backup",
+    "24x7 Security",
+    "Balcony",
+    "Pre-School",
+    "View of Landmark",
+    "Security Staff"
   ],
   [
-    "Parking",
-    "Lift",
-    "Water Supply",
-    "Security",
-    "Power Backup",
-    
+    "Hangers",
+    "Bed linens",
+    "Extra pillows & blankets",
+    "Iron",
+    "TV with standard cable",
   ],
-  ["Clubhouse",
-    "Gym",
-    "Park",
-    "Swimming Pool",
-    "CCTV",],
+  ["Refrigerator", "Microwave", "Dishwasher", "Coffee maker"],
 ];
 
 export default function Features() {

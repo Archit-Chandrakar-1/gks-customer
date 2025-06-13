@@ -1,6 +1,7 @@
 "use client";
 import { filterOptions, properties } from "@/data/properties";
-
+import EstateLegal from "@/components/houseServices/EstateLegal/EstateLegal";
+import EstateLegalPage from "@/app/houseServices/EstateLegal/page";
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -9,8 +10,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 
 export default function Properties() {
-  const [selectedOption, setSelectedOption] = useState(filterOptions[0]);
-  const [filtered, setFiltered] = useState(properties);
+  
+const [selectedCategory, setSelectedCategory] = useState("View All");
+const [filtered, setFiltered] = useState(properties);
+
+const categories = ["View All", "Builder's Project", "Lavish Estate", "Residential", "Commercial", "Land"];
+
 
   // Define icon mapping inside the Properties component function (after hooks declarations)
   const optionIcons = {
@@ -23,14 +28,31 @@ export default function Properties() {
   };
 
   useEffect(() => {
-    if (selectedOption == "View All") {
+    if (selectedCategory === "View All") {
       setFiltered(properties);
     } else {
-      setFiltered(
-        properties.filter((el) => el.filterOptions.includes(selectedOption))
-      );
+      setFiltered(properties.filter((el) => el.propertyType === selectedCategory));
     }
-  }, [selectedOption]);
+  }, [selectedCategory]);
+
+// UNCOMMENT THIS if you want to switch to API-based data
+/*
+useEffect(() => {
+  const fetchProperties = async () => {
+    try {
+      const res = await fetch("/api/properties"); // Replace with your actual API URL
+      const data = await res.json();
+      setProperties(data);
+    } catch (error) {
+      console.error("Failed to fetch properties:", error);
+    }
+  };
+
+  fetchProperties();
+}, []);
+*/
+
+
 
   return (
     <section className="flat-section flat-recommended">
@@ -40,18 +62,43 @@ export default function Properties() {
         <div
           className="flat-tab-recommended flat-animate-tab wow fadeInUp"
           data-wow-delay=".2s">
-
+{/* 
           <Swiper
-                    slidesPerView={"auto"}
-                    spaceBetween={20}
+                    spaceBetween={10}
                     className="swiper tf-sw-auto sw-auto"
-                    data-loop="true"
-                  >
-                    {/* 1 */}
-                    <SwiperSlide className="swiper-slide">
-                      <a href="#" className="homelengo-categories-v2 active">
-                        <div className="icon-box">
-                          <svg
+                    breakpoints={{
+                      0: {
+                        slidesPerView: 2.8, // Mobile (0px and up)
+                      },
+                      480: {
+                        slidesPerView: 3, // Small mobiles
+                      },
+                      768: {
+                        slidesPerView: 5, // Tablets
+                      },
+                      1024: {
+                        slidesPerView: 7.5, // Small desktops
+                      },
+                      1280: {
+                        slidesPerView: 10.05, // Larger desktops
+                      },
+                    }}> */}
+
+<Swiper
+  spaceBetween={10}
+  breakpoints={{
+    0: { slidesPerView: 2.3 },
+    768: { slidesPerView: 4 },
+    1024: { slidesPerView: 10.2 },
+  }}
+>
+  
+
+                    {/* ViewALL */}
+                    <SwiperSlide className="swiper-slide" onClick={() => setSelectedCategory("View All")}>
+                      <a className={`homelengo-categories-v2 ${selectedCategory === "View All" ? "active" : ""}`}>
+                        <div className="icon-box w-[50px] h-[50px] md:w-[60px] md:h-[60px]">
+                        <svg
                             width={41}
                             height={41}
                             viewBox="0 0 41 41"
@@ -84,10 +131,12 @@ export default function Properties() {
                       </a>
                     </SwiperSlide>
 
-                    <SwiperSlide className="swiper-slide">
-                      <a href="#" className="homelengo-categories-v2">
-                        <div className="icon-box">
-                          <svg
+                    {/* Builder's Project */}
+                    <SwiperSlide className="swiper-slide" onClick={() => setSelectedCategory("Builder's Project")}>
+                      <a className={`homelengo-categories-v2 ${selectedCategory === "Builder's Project" ? "active" : ""}`}>
+                        <div className="icon-box w-[50px] h-[50px] md:w-[60px] md:h-[60px]">
+                          
+                        <svg
                             width={41}
                             height={41}
                             viewBox="0 0 41 41"
@@ -103,15 +152,18 @@ export default function Properties() {
                               fill="#A3ABB0"
                             />
                           </svg>
+
                         </div>
-                        <p className="content text-center fw-7">Builders Project</p>
+                        <p className="content text-center fw-7">Builder's Project</p>
                       </a>
                     </SwiperSlide>
-                    
-                    <SwiperSlide className="swiper-slide">
-                      <a href="#" className="homelengo-categories-v2">
-                        <div className="icon-box">
-                          <svg
+
+                    {/* "Lavish Estate" */}
+                    <SwiperSlide className="swiper-slide" onClick={() => setSelectedCategory("Lavish Estate")}>
+                    <a className={`homelengo-categories-v2 ${selectedCategory === "Lavish Estate" ? "active" : ""}`}>
+                      <div className="icon-box w-[50px] h-[50px] md:w-[60px] md:h-[60px]">
+                        
+                      <svg
                             width={41}
                             height={41}
                             viewBox="0 0 41 41"
@@ -135,15 +187,18 @@ export default function Properties() {
                               </clipPath>
                             </defs>
                           </svg>
-                        </div>
-                        <p className="content text-center fw-7">Lavish Estates</p>
-                      </a>
+
+                      </div>
+                      <p className="content text-center fw-7">Lavish Estate</p>
+                    </a>
                     </SwiperSlide>
-                    
-                    <SwiperSlide className="swiper-slide">
-                      <a href="#" className="homelengo-categories-v2">
-                        <div className="icon-box">
-                          <svg
+
+                    {/* Residential */}
+                    <SwiperSlide className="swiper-slide" onClick={() => setSelectedCategory("Residential")}>
+                    <a className={`homelengo-categories-v2 ${selectedCategory === "Residential" ? "active" : ""}`}>
+                      <div className="icon-box w-[50px] h-[50px] md:w-[60px] md:h-[60px]">
+                        
+                      <svg
                             width={41}
                             height={41}
                             viewBox="0 0 41 41"
@@ -171,15 +226,18 @@ export default function Properties() {
                               </clipPath>
                             </defs>
                           </svg>
-                        </div>
-                        <p className="content text-center fw-7">Residential</p>
-                      </a>
+
+                      </div>
+                      <p className="content text-center fw-7">Residential</p>
+                    </a>
                     </SwiperSlide>
 
-                    <SwiperSlide className="swiper-slide">
-                      <a href="#" className="homelengo-categories-v2">
-                        <div className="icon-box">
-                          <svg
+                    {/* Commercial */}
+                  <SwiperSlide className="swiper-slide" onClick={() => setSelectedCategory("Commercial")}>
+                    <a className={`homelengo-categories-v2 ${selectedCategory === "Commercial" ? "active" : ""}`}>
+                      <div className="icon-box w-[50px] h-[50px] md:w-[60px] md:h-[60px]">
+                        
+                      <svg
                             width={41}
                             height={41}
                             viewBox="0 0 41 41"
@@ -211,15 +269,18 @@ export default function Properties() {
                               </clipPath>
                             </defs>
                           </svg>
-                        </div>
-                        <p className="content text-center fw-7">Commercial</p>
-                      </a>
-                    </SwiperSlide>
 
-                    <SwiperSlide className="swiper-slide">
-                      <a href="#" className="homelengo-categories-v2">
-                        <div className="icon-box">
-                          <svg
+                      </div>
+                      <p className="content text-center fw-7">Commercial</p>
+                    </a>
+                  </SwiperSlide>  
+                    
+                  {/* Land */}
+                  <SwiperSlide className="swiper-slide" onClick={() => setSelectedCategory("Land")}>
+                    <a className={`homelengo-categories-v2 ${selectedCategory === "Land" ? "active" : ""}`}>
+                      <div className="icon-box w-[50px] h-[50px] md:w-[60px] md:h-[60px]">
+                        
+                      <svg
                             width={41}
                             height={41}
                             viewBox="0 0 41 41"
@@ -257,15 +318,16 @@ export default function Properties() {
                               </clipPath>
                             </defs>
                           </svg>
-                        </div>
-                        <p className="content text-center fw-7">Land/Plot</p>
-                      </a>
-                    </SwiperSlide>
+                        
+                      </div>
+                      <p className="content text-center fw-7">Land</p>
+                    </a>
+                  </SwiperSlide>
 
-                    
-                    <SwiperSlide className="swiper-slide">
-                      <Link href="/houseServices/estateLegal"  className="homelengo-categories-v2">
-                        <div className="icon-box">
+                  {/* Legal Services */}
+                  <SwiperSlide className="swiper-slide">
+                      <Link href="/houseServices/EstateLegal" className="homelengo-categories-v2">
+                        <div className="icon-box w-[50px] h-[50px] md:w-[60px] md:h-[60px]">
                           <svg
                             width={41}
                             height={41}
@@ -281,13 +343,12 @@ export default function Properties() {
                         </div>
                         <p className="content text-center fw-7">Legal Services</p>
                       </Link>
-                    </SwiperSlide>
+                  </SwiperSlide>
 
-                 
-                    
-                    <SwiperSlide className="swiper-slide">
+                  {/* Project Management */}
+                  <SwiperSlide className="swiper-slide">
                       <a href="/houseServices/projectManagement" className="homelengo-categories-v2">
-                        <div className="icon-box">
+                        <div className="icon-box w-[50px] h-[50px] md:w-[60px] md:h-[60px]">
                           <svg
                             width={41}
                             height={41}
@@ -319,13 +380,12 @@ export default function Properties() {
                         </div>
                         <p className="content text-center fw-7">Project Management</p>
                       </a>
-                    </SwiperSlide>
+                  </SwiperSlide>
                     
-                    
-                    {/* 9 */}
-                    <SwiperSlide className="swiper-slide">
+                  {/* Portfolio */}
+                  <SwiperSlide className="swiper-slide">
                       <a href="#" className="homelengo-categories-v2">
-                        <div className="icon-box">
+                        <div className="icon-box w-[50px] h-[50px] md:w-[60px] md:h-[60px]">
                           <svg
                             width={41}
                             height={41}
@@ -357,8 +417,23 @@ export default function Properties() {
                         </div>
                         <p className="content text-center fw-7">My Portfolio</p>
                       </a>
+                    
                     </SwiperSlide>
-                    {/* 10 */}
+
+                  <SwiperSlide className="swiper-slide">
+                      <Link href="/houseServices/vastuService" className="homelengo-categories-v2">
+                        <div className="icon-box w-[50px] h-[50px] flex items-center justify-center rounded bg-gray-100">
+                          {/* Compass Icon */}
+                          <svg width="41" height="41" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="#A3ABB0" strokeWidth="2" />
+                            <path d="M14.5 9.5L12 12L9.5 14.5L11 11L14.5 9.5Z" fill="#A3ABB0" />
+                          </svg>
+                        </div>
+                        <p className="text-xs text-center mt-1">Vastu</p>
+                      </Link>
+                    </SwiperSlide>
+                    
+                    
 
                     
                     

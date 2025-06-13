@@ -2,18 +2,15 @@
 "use client"; // Add this line to mark the component as a Client Component
 
 import React, { useState } from 'react';
+import { BookingData } from '../../bookingForm/BookingForm';
 import ServiceCard from '../../serviceCard/ServiceCard';
+import BookingForm from '../../bookingForm/BookingForm';
 import { estateLegalServices } from '@/data/estateLegalServiceData';
 import './EstateLegal.css';
 import Header1 from '@/components/headers/Header1';
 import Footer1 from '@/components/footer/Footer1';
-import BookingForm from '@/components/bookingForm/bookingForm';
-import { useScrollRestoration } from '@/hooks/useScrollRestoration';
 
 const EstateLegal = () => {
-  // Use the scroll restoration hook
-  useScrollRestoration();
-
   // State for selected service
   const [selectedServiceId, setSelectedServiceId] = useState(null);
   
