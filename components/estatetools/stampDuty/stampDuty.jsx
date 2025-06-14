@@ -70,7 +70,7 @@ const StampDutyCalculator = () => {
   };
 
   const handleStateChange = (e) => {
-    setSelectedState(e.target.value);
+    setSelectedState(e.target.value); 
     setStampDuty(null);
   };
 

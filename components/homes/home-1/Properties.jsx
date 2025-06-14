@@ -87,10 +87,16 @@ useEffect(() => {
 <Swiper
   spaceBetween={10}
   breakpoints={{
-    0: { slidesPerView: 2.3 },
-    768: { slidesPerView: 4 },
+    0: { slidesPerView: 3.0 },
+    768: { slidesPerView: 5 },
     1024: { slidesPerView: 10.2 },
   }}
+  modules={[Pagination]}
+  pagination={{
+    el: '.custom-pagination',
+    type: 'progressbar',
+  }}
+  className="my-swiper"
 >
   
 

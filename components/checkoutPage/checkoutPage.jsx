@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Cart from '../cart/Cart';
 import './checkoutPage.css';
-
+ 
 const CheckoutPage = () => {
   const [cartItems] = useState([
     {
