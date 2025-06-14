@@ -6,7 +6,7 @@ import ServiceCards from '../serviceCards/ServiceCards';
 import Cart from '../cart/Cart';
 import ContentSection from '../contentSection/contentSection';
 import Modal from '../modal/Modal';
-import './ServicePage.css';
+import '../servicePage/servicePage.css';
 import { FaStar } from 'react-icons/fa';
 
 const ServicePage = ({ serviceData, serviceName }) => {
